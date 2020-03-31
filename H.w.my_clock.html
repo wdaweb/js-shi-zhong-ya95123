@@ -81,7 +81,18 @@
             transform-origin: bottom center;
         }
 
-        #bigScale {
+        .scaleBig {
+            width: 8px;
+            height: 250px;
+            background: orange;
+
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            transform-origin: bottom center;
+        }
+
+        .bigS {
             width: 8px;
             height: 16px;
             border-radius: 0% 0% 50% 50%;
@@ -90,7 +101,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%) rotate(0deg);
-            transform-origin: bottom 484px;
+            /* transform-origin: bottom center; */
         }
 
         #twelve {
@@ -113,7 +124,11 @@
             <div id="minute"></div>
             <div id="second"></div>
 
-            <div id="bigScale"></div>
+            <!-- 刻度 -->
+            <div class="scaleBig">
+                <div class="bigS">不要掙扎了~把刻度div印出來</div>
+            </div>
+
             <span id="twelve">12</span>
 
         </div>
@@ -124,7 +139,8 @@
         const hour = document.getElementById("hour");
         const minute = document.getElementById("minute");
         const second = document.getElementById("second");
-        const bigScale = document.getElementById("bigScale");
+        const scaleBig = document.getElementsByClassName("scaleBig");
+        const bigS = document.getElementsByClassName("bigS");
 
         const setDate = () => {
             const now = new Date();
@@ -135,9 +151,13 @@
         setDate();
         setInterval(setDate, 1000);
 
+        // let bigS = bigscaleBig;
         for (let i = 1; i < 4; i++) {
-            bigScale.style.transform = `rotate(${i * 45}deg)`;
-            document.write(bigScale);
+            clock.insertAdjacentHTML(`
+            <div class="scaleBig">
+            <div class="bigS"></div>
+            </div>`);
+            scaleBig[i].style.transform = `rotate(${i * 45}deg)`;
         }
     </script>
 </body>
