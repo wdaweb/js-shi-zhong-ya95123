@@ -30,10 +30,8 @@
             height: 500px;
             border-radius: 50%;
             margin: auto;
-            /* background: white; */
             border: 5px solid white;
-            /* opacity: 0.8; */
-            /* box-shadow: 0px 0px 8px #666; */
+            box-shadow: 0px 0px 10px #999;
 
             position: absolute;
             top: 50%;
@@ -41,15 +39,14 @@
             transform: translate(-25%, -50%);
         }
 
+        /* 特別給時鐘底設透明度 */
         #clcolor {
             width: 500px;
             height: 500px;
             border-radius: 50%;
             margin: auto;
             background: white;
-            /* border: 5px solid #000; */
             opacity: 0.3;
-            box-shadow: 0px 0px 8px #666;
 
             position: absolute;
             top: 50%;
@@ -60,10 +57,9 @@
         #hour {
             width: 8px;
             height: 25%;
-            background: red;
+            background: white;
+            /* border-radius: 25%; */
 
-
-            border-radius: 25%;
             position: absolute;
             left: calc(50% - 4px);
             top: 25%;
@@ -74,8 +70,8 @@
         #minute {
             width: 8px;
             height: 35%;
-            background: orange;
-            border-radius: 25%;
+            background: white;
+            /* border-radius: 25%; */
 
             position: absolute;
             left: calc(50% - 4px);
@@ -90,7 +86,7 @@
             left: 50%;
             transform: translateX(-50%);
 
-            color: black;
+            color: #fff;
             font-size: 3rem;
             z-index: 999;
         }
