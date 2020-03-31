@@ -13,8 +13,10 @@
         }
 
         body {
+            /* TODO 修背景顏色、字體 */
             background: #036;
             /* background-image: url("https://picsum.photos/1920/1080/?random=1"); */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #bg {
@@ -38,8 +40,11 @@
             transform: translate(-50%, -50%);
         }
 
-        #hour {
-            width: ;
+        #twelve {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
         }
     </style>
 </head>
@@ -47,6 +52,7 @@
 <body>
     <div id="bg">
         <div id="clock">
+            <span id="twelve">12</span>
             <div id="hour"></div>
             <div id="minute"></div>
             <div id="second"></div>
