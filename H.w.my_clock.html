@@ -43,13 +43,28 @@
         #hour {
             width: 8px;
             height: 25%;
-            background: orange;
+            background: red;
+            border-radius: 25%;
             position: absolute;
             left: calc(50% - 4px);
             top: 25%;
             transform: rotate(0deg);
             transform-origin: bottom center;
         }
+
+        #minute {
+            width: 8px;
+            height: 35%;
+            background: orange;
+            border-radius: 25%;
+
+            position: absolute;
+            left: calc(50% - 4px);
+            top: 15%;
+            transform: rotate(0deg);
+            transform-origin: bottom center;
+        }
+
 
         #twelve {
             position: absolute;
@@ -80,6 +95,7 @@
             const now = new Date();
             // 小時：360/12=30度　分鐘、秒：360/60=6度
             hour.style.transform = `rotate(${now.getHours() * 30}deg)`;
+            minute.style.transform = `rotate(${now.getMinutes() * 6}deg)`;
         }
 
         setDate();
