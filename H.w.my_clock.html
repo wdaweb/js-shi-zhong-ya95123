@@ -19,7 +19,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        #bg {
+        #bgbox {
             width: 100vw;
             height: 100vh;
             position: relative;
@@ -40,6 +40,17 @@
             transform: translate(-50%, -50%);
         }
 
+        #hour {
+            width: 8px;
+            height: 25%;
+            background: orange;
+            position: absolute;
+            left: calc(50% - 4px);
+            top: 25%;
+            transform: rotate(0deg);
+            transform-origin: bottom center;
+        }
+
         #twelve {
             position: absolute;
             left: 50%;
@@ -50,7 +61,7 @@
 </head>
 
 <body>
-    <div id="bg">
+    <div id="bgbox">
         <div id="clock">
             <span id="twelve">12</span>
             <div id="hour"></div>
