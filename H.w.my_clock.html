@@ -75,6 +75,15 @@
         const hour = document.getElementById("hour");
         const minute = document.getElementById("minute");
         const second = document.getElementById("second");
+
+        const setDate = () => {
+            const now = new Date();
+            // 小時：360/12=30度　分鐘、秒：360/60=6度
+            hour.style.transform = `rotate(${now.getHours() * 30}deg)`;
+        }
+
+        setDate();
+        setInterval(setDate, 1000);
     </script>
 </body>
 
