@@ -81,18 +81,19 @@
             transform-origin: bottom center;
         }
 
-        .scaleBig {
+        .frameBig {
             width: 8px;
             height: 250px;
             background: orange;
+            /* border-radius: 0px 0px 30% 30%; */
 
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%) rotate(0deg);
+            left: calc(50% - 4px);
+            transform: rotate(0deg);
             transform-origin: bottom center;
         }
 
-        .bigS {
+        .bigDot {
             width: 8px;
             height: 16px;
             border-radius: 0% 0% 50% 50%;
@@ -101,7 +102,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%) rotate(0deg);
-            /* transform-origin: bottom center; */
+            /* transform-origin: bottom center 484px; */
         }
 
         #twelve {
@@ -124,9 +125,18 @@
             <div id="minute"></div>
             <div id="second"></div>
 
-            <!-- 刻度 -->
-            <div class="scaleBig">
-                <div class="bigS">不要掙扎了~把刻度div印出來</div>
+            <!-- 大刻度 -->
+            <div class="frameBig">
+                <div class="bigDot"></div>
+            </div>
+            <div class="frameBig">
+                <div class="bigDot"></div>
+            </div>
+            <div class="frameBig">
+                <div class="bigDot"></div>
+            </div>
+            <div class="frameBig">
+                <div class="bigDot"></div>
             </div>
 
             <span id="twelve">12</span>
@@ -139,8 +149,8 @@
         const hour = document.getElementById("hour");
         const minute = document.getElementById("minute");
         const second = document.getElementById("second");
-        const scaleBig = document.getElementsByClassName("scaleBig");
-        const bigS = document.getElementsByClassName("bigS");
+        const frameBig = document.getElementsByClassName("frameBig");
+        // const bigD =documeny.getElementsByClassName()
 
         const setDate = () => {
             const now = new Date();
@@ -151,13 +161,8 @@
         setDate();
         setInterval(setDate, 1000);
 
-        // let bigS = bigscaleBig;
         for (let i = 1; i < 4; i++) {
-            clock.insertAdjacentHTML(`
-            <div class="scaleBig">
-            <div class="bigS"></div>
-            </div>`);
-            scaleBig[i].style.transform = `rotate(${i * 45}deg)`;
+            frameBig[i].style.transform = `rotate(${i * 90}deg)`;
         }
     </script>
 </body>
