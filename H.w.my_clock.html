@@ -428,8 +428,8 @@
         const setDate = () => {
             const now = new Date();
             // 小時：360/12=30度　分鐘、秒：360/60=6度
-            hour.style.transform = `rotate(${now.getHours() * 30}deg)`;
-            minute.style.transform = `rotate(${now.getMinutes() * 6}deg)`;
+            hour.style.transform = `rotate(${now.getHours() * 30 + ((30 / 60) * now.getMinutes())}deg)`;
+            minute.style.transform = `rotate(${now.getMinutes() * 6 + ((6 / 60) * now.getSeconds())}deg)`;
             frameDino.style.transform = `rotate(${now.getSeconds() * 6}deg)`;
         }
         setDate();
