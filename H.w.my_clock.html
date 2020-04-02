@@ -180,7 +180,7 @@
     <div id="bgbox">
         <div id="left">
             <div id="outsideC">
-                <div id="frameDino"><img id="dino" src="/小恐龍2.png" alt="小恐龍"></div>
+                <div id="frameDino"><img id="dino" src="/小恐龍2.gif" alt="小恐龍"></div>
 
                 <div id="clock">
                     <div id="clcolor"></div>
@@ -430,10 +430,10 @@
             // 小時：360/12=30度　分鐘、秒：360/60=6度
             hour.style.transform = `rotate(${now.getHours() * 30 + ((30 / 60) * now.getMinutes())}deg)`;
             minute.style.transform = `rotate(${now.getMinutes() * 6 + ((6 / 60) * now.getSeconds())}deg)`;
-            frameDino.style.transform = `rotate(${now.getSeconds() * 6}deg)`;
+            frameDino.style.transform = `rotate(${now.getSeconds() * 6 + (6 / 999) * now.getMilliseconds()}deg)`;
         }
         setDate();
-        setInterval(setDate, 1000);
+        setInterval(setDate, 1);
 
         // 60個陣列key只到59而已
         for (let i = 0; i <= 59; i++) {
